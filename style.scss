@@ -1,0 +1,48 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh;
+    min-width: 100vw;
+    margin: auto;
+    &:hover + .card::before {
+        opacity: 1;
+    }
+}
+
+.card {
+    height: 50vh;
+    width: 50vw;
+    min-height: 50vh;
+    min-width: 500px;
+    background: rgb(0, 0, 0);
+    border: 3px solid rgb(186, 186, 186);
+    border-radius: 8px;
+    margin: auto;
+    position: relative;
+
+    &::before {
+        content: '';
+        height: inherit;
+        width: inherit;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: radial-gradient(1200px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+                rgba(3, 243, 195, 0.4),
+                rgba(14, 189, 145, 0.4),
+                rgba(7, 117, 99, 0.4),
+                transparent 70%);
+        border-radius: inherit;
+        opacity: 0;
+        transition: all ease-in-out 0.3s;
+    }
+
+
+}
